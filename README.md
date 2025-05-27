@@ -5,34 +5,23 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Daniel S. Demoz – Data Analyst & Consultant</title>
   <style>
-    /* General Reset */
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-
-    html {
-      scroll-behavior: smooth;
-    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
 
     body {
       font-family: 'Segoe UI', sans-serif;
-      min-height: 100vh;
+      background: #0f172a; /* Dark blue-gray */
+      color: #e2e8f0;
       display: flex;
-      flex-direction: column;
-      background: url('joshua-sortino-LqKhnDzSF-8-unsplash.jpg') no-repeat center center fixed;
-      background-size: cover;
-      color: #e0e0e0;
+      min-height: 100vh;
     }
 
     nav.sidebar {
       width: 240px;
-      background-color: rgba(10, 20, 30, 0.95);
+      background: #1e293b;
       color: #fff;
+      padding-top: 30px;
       position: fixed;
       height: 100vh;
-      padding-top: 30px;
       overflow-y: auto;
     }
 
@@ -40,21 +29,21 @@
       text-align: center;
       margin-bottom: 20px;
       font-size: 18px;
-      color: #00f5d4;
-      letter-spacing: 1px;
+      color: #38bdf8;
     }
 
     nav.sidebar a {
       display: block;
-      color: #aefeff;
+      color: #a5f3fc;
       padding: 14px 20px;
       text-decoration: none;
-      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      border-bottom: 1px solid #334155;
       transition: background 0.3s;
     }
 
     nav.sidebar a:hover {
-      background-color: rgba(0, 255, 170, 0.2);
+      background-color: #0ea5e9;
+      color: #fff;
     }
 
     main {
@@ -64,13 +53,10 @@
     }
 
     .container {
-      max-width: 960px;
-      margin: auto;
-      background: rgba(20, 30, 40, 0.85);
+      background: #1e293b;
       padding: 30px;
-      border-radius: 15px;
-      box-shadow: 0 10px 30px rgba(0, 255, 255, 0.2);
-      backdrop-filter: blur(6px);
+      border-radius: 12px;
+      box-shadow: 0 10px 30px rgba(56, 189, 248, 0.2);
     }
 
     header {
@@ -84,7 +70,7 @@
       margin: 0 auto 20px auto;
       border-radius: 12px;
       overflow: hidden;
-      box-shadow: 0 4px 12px rgba(0, 255, 255, 0.4);
+      box-shadow: 0 4px 12px rgba(56, 189, 248, 0.4);
     }
 
     .photo-frame img {
@@ -95,40 +81,13 @@
 
     h1 {
       font-size: 28px;
-      color: #00f5d4;
+      color: #7dd3fc;
       margin-bottom: 5px;
     }
 
     .center-subtitle {
       font-size: 16px;
-      color: #cfd9e4;
-      margin-bottom: 20px;
-    }
-
-    h2 {
-      font-size: 22px;
-      color: #7cf9ff;
-      margin-top: 30px;
-      margin-bottom: 10px;
-    }
-
-    p, li {
-      font-size: 16px;
-      line-height: 1.6;
-      color: #e6f6ff;
-    }
-
-    ul {
-      padding-left: 20px;
-      margin-bottom: 20px;
-    }
-
-    a {
-      color: #93f9b9;
-    }
-
-    a:hover {
-      text-decoration: underline;
+      color: #94a3b8;
     }
 
     @media (max-width: 768px) {
@@ -137,27 +96,14 @@
         width: 100%;
         height: auto;
         display: flex;
-        flex-direction: row;
-        justify-content: space-around;
         flex-wrap: wrap;
-        padding: 10px 0;
-      }
-
-      nav.sidebar a {
-        border-bottom: none;
-        padding: 10px;
-        flex-grow: 1;
-        text-align: center;
+        justify-content: space-around;
       }
 
       main {
         margin-left: 0;
         width: 100%;
         padding: 20px;
-      }
-
-      .photo-frame {
-        height: auto;
       }
     }
   </style>
@@ -167,19 +113,17 @@
   <!-- Sidebar -->
   <nav class="sidebar" aria-label="Main Navigation">
     <h2>Menu</h2>
-    <a href="#summary">Summary</a>
-    <a href="#skills">Skills</a>
-    <a href="#education">Education</a>
-    <a href="#experience">Experience</a>
-    <a href="#certs">Certifications</a>
-    <a href="#contact">Contact</a>
+    <a href="summary.html">Summary</a>
+    <a href="skills.html">Skills</a>
+    <a href="education.html">Education</a>
+    <a href="experience.html">Experience</a>
+    <a href="certifications.html">Certifications</a>
+    <a href="contact.html">Contact</a>
   </nav>
 
-  <!-- Main Content -->
+  <!-- Main -->
   <main>
     <div class="container">
-
-      <!-- Header -->
       <header>
         <div class="photo-frame">
           <img src="6.wp5975949.jpg" alt="Portrait of Daniel S. Demoz">
@@ -187,72 +131,6 @@
         <h1>Daniel S. Demoz</h1>
         <p class="center-subtitle">AI-Powered Educator & Analytics Consultant</p>
       </header>
-
-      <!-- Summary -->
-      <section id="summary">
-        <h2>Professional Summary</h2>
-        <p>Strategic data analyst and educator with 15+ years of global experience. Specialized in predictive analytics, curriculum development, and AI literacy. Passionate about empowering institutions and professionals through data-driven decision-making and emerging technology.</p>
-      </section>
-
-      <!-- Skills -->
-      <section id="skills">
-        <h2>Technical Skills</h2>
-        <ul>
-          <li><strong>Languages & Tools:</strong> SQL, MySQL, Python, SPSS, SAS, Excel, XLMiner</li>
-          <li><strong>BI & Visualization:</strong> Power BI, Tableau</li>
-          <li><strong>Modeling:</strong> Predictive modeling, Multivariate analysis</li>
-          <li><strong>Platforms:</strong> Qualtrics, Sage 50, QuickBooks, Canvas LMS</li>
-        </ul>
-      </section>
-
-      <!-- Education -->
-      <section id="education">
-        <h2>Education</h2>
-        <ul>
-          <li><strong>University of Ottawa</strong> — M.I.AI (In Progress)</li>
-          <li><strong>Centennial College</strong> — Postgrad, Marketing Research & Analytics (2021)</li>
-          <li><strong>Centennial College</strong> — Teaching & Learning Certificate (2023)</li>
-          <li><strong>Khon Kaen University</strong> — M.A. Development Management</li>
-          <li><strong>University of Asmara</strong> — B.A. Sociology & Social Work</li>
-        </ul>
-      </section>
-
-      <!-- Experience -->
-      <section id="experience">
-        <h2>Consulting & Teaching Experience</h2>
-        <p><strong>BRUKD Consulting – Founder & Lead Consultant (2017–Present)</strong></p>
-        <ul>
-          <li>Developed data-driven courseware used in over 3 academic institutions</li>
-          <li>Delivered guest lectures on AI, analytics, and transformation in Asia & Canada</li>
-          <li>Advised over 12 SMEs on analytics, automation, and digital literacy</li>
-        </ul>
-
-        <p><strong>Professor – Centennial, George Brown & Seneca Colleges</strong></p>
-        <ul>
-          <li>Led over 1,200 graduate students in data analysis, marketing strategy, and BI</li>
-          <li>Supervised case-based learning projects using SQL, Power BI, Python, and SAS</li>
-        </ul>
-      </section>
-
-      <!-- Certifications -->
-      <section id="certs">
-        <h2>Certifications</h2>
-        <ul>
-          <li>Data Science Foundations – IBM</li>
-          <li>Excel for Data Analysis – Microsoft 365</li>
-          <li>Requirements Elicitation – IIBA</li>
-          <li>Technology for Teaching – Centennial College</li>
-        </ul>
-      </section>
-
-      <!-- Contact -->
-      <section id="contact">
-        <h2>Contact</h2>
-        <p>Email: <a href="mailto:asbdansi9@gmail.com">asbdansi9@gmail.com</a><br>
-        Location: Toronto, ON, Canada<br>
-        LinkedIn: <a href="#">(Insert your LinkedIn URL here)</a></p>
-      </section>
-
     </div>
   </main>
 </body>
