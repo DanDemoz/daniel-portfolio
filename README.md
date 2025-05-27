@@ -14,7 +14,6 @@
       color: #e2e8f0;
       display: flex;
       min-height: 100vh;
-      transition: all 0.3s ease;
     }
 
     nav.sidebar {
@@ -115,10 +114,10 @@
 
     section.page {
       display: none;
-      animation: fadeIn 0.5s ease-in-out;
     }
 
-    section.page.active {
+    section.page.active,
+    section#home-summary {
       display: block;
     }
 
@@ -135,11 +134,6 @@
       margin-top: 40px;
       font-size: 14px;
       color: #64748b;
-    }
-
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(20px); }
-      to { opacity: 1; transform: translateY(0); }
     }
 
     @media (max-width: 768px) {
@@ -165,8 +159,7 @@
   <!-- Sidebar -->
   <nav class="sidebar" aria-label="Main Navigation">
     <h2>Menu</h2>
-    <a onclick="showPage('home')">Home</a>
-    <a onclick="showPage('summary')">Summary</a>
+    <a onclick="showPage('home-summary')">Home</a>
     <a onclick="showPage('skills')">Skills</a>
     <a onclick="showPage('education')">Education</a>
     <a onclick="showPage('experience')">Experience</a>
@@ -179,8 +172,19 @@
   <main>
     <div class="container">
 
-      <!-- Content Sections (unchanged) -->
-      <!-- ... existing sections ... -->
+      <section id="home-summary">
+        <header>
+          <div class="photo-frame">
+            <img src="profile-picture.jpg" alt="Portrait of Daniel S. Demoz">
+          </div>
+          <h1>Daniel S. Demoz</h1>
+          <p class="center-subtitle">College Professor | Data & Analytics Consultant | AI-Enhanced Educator</p>
+        </header>
+        <h2>Professional Summary</h2>
+        <p>I am a College Professor, Researcher, and Consultant with over 15 years of experience working across academia, consulting, and public service. I specialize in business intelligence, analytics-driven curriculum development, AI-powered insights, and performance optimization. My teaching portfolio spans leading institutions such as George Brown College, Centennial College, and Seneca College. I bring industry-aligned instruction in SQL, Power BI, Tableau, SAS, Python, and Qualtrics. Through BRUKD Consulting, I support institutions and SMEs with analytics integration, research strategy, and curriculum digitization, delivering training across Canada, Indonesia, and Thailand.</p>
+      </section>
+
+      <!-- Other content sections remain unchanged and should be displayed using JavaScript navigation -->
 
       <footer>
         &copy; 2025 Daniel S. Demoz. All rights reserved. | Last updated: May 2025
@@ -190,19 +194,21 @@
 
   <script>
     function showPage(id) {
-      const sections = document.querySelectorAll('.page');
+      const sections = document.querySelectorAll('.page, #home-summary');
       const links = document.querySelectorAll('nav.sidebar a');
 
       sections.forEach(section => section.classList.remove('active'));
       links.forEach(link => link.classList.remove('active-link'));
 
-      document.getElementById(id).classList.add('active');
-      const activeLink = Array.from(links).find(link => link.textContent.toLowerCase() === id);
+      const activeSection = document.getElementById(id);
+      if (activeSection) activeSection.classList.add('active');
+
+      const activeLink = Array.from(links).find(link => link.getAttribute('onclick')?.includes(id));
       if (activeLink) activeLink.classList.add('active-link');
     }
 
     window.addEventListener('load', () => {
-      const hash = window.location.hash.replace('#', '') || 'home';
+      const hash = window.location.hash.replace('#', '') || 'home-summary';
       showPage(hash);
     });
 
